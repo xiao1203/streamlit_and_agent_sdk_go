@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package streamlit_and_agent_sdk_go;
+
+option go_package = "github.com/xiao1203/streamlit_and_agent_sdk_go/go_backend/proto_files;proto_files ";
+
+service AIAgent {
+  // クライアントからのリクエストに対して挨拶を返す
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}

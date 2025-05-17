@@ -1,0 +1,12 @@
+services:
+  go_backend:
+    build: ./go_backend
+    ports:
+      - '50051:50051'
+
+  streamlit_frontend:
+    build: ./streamlit_frontend
+    ports:
+      - '8501:8501'
+    depends_on:
+      - go_backend
